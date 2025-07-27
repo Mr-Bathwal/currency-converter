@@ -61,20 +61,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  convertBtn.addEventListener("click", () => {
+    convertBtn.addEventListener("click", async () => {
     const amount = parseFloat(amountInput.value);
     const from = fromCurrency.value;
     const to = toCurrency.value;
 
-    if (!baseRates[to]) {
-      resultDiv.textContent = "Invalid currency selection.";
-      return;
-    }
+    try {
+      // Fetch rates for the selected "from" currency
+      const data = await fetchRates(from);
 
-    const rate = baseRates[to];
-    const result = (amount * rate).toFixed(2);
-    resultDiv.textContent = `${amount} ${from} = ${result} ${to}`;
+      if (!data.rates[to]) {
+        resultDiv.textContent = "Invalid currency selection.";
+        return;
+      }
+
+      const rate = data.rates[to];
+      const result = (amount * rate).toFixed(2);
+      resultDiv.textContent = `${amount} ${from} = ${result} ${to}`;
+    } catch (error) {
+      resultDiv.textContent = "Error fetching conversion rates.";
+    }
   });
+
 
   searchFrom.addEventListener("input", () => filterDropdown(searchFrom, fromCurrency));
   searchTo.addEventListener("input", () => filterDropdown(searchTo, toCurrency));
