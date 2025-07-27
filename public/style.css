@@ -46,6 +46,8 @@ input[type="number"] {
   border-radius: 10px;
   outline: none;
   transition: 0.3s;
+  text-align: center;
+
 }
 input[type="number"]:focus {
   border-color: #ffcc00;
