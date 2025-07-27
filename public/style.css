@@ -1,0 +1,147 @@
+/* Dark background with gradient */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0f1f, #161b2f, #1f2937);
+  color: #fff;
+}
+
+/* Heading placed above app */
+h1 {
+  margin-bottom: 25px;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 15px #00ffd9;
+}
+
+/* Converter Card */
+.converter {
+  background: rgba(20, 20, 20, 0.85);
+  border: 3px solid #00ffd9;
+  border-radius: 20px;
+  padding: 40px;
+  width: 600px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.3);
+}
+
+/* Amount input box */
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  background: #111;
+  border: 2px solid #00ffd9;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+}
+input[type="number"]:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 8px #ffcc00;
+}
+
+/* Layout for dropdowns */
+.dropdowns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Search bars above dropdowns */
+.dropdowns input[type="text"] {
+  width: 130px;
+  padding: 8px;
+  font-size: 0.9rem;
+  background: #222;
+  border: 2px solid #00ffd9;
+  color: #fff;
+  border-radius: 8px;
+  outline: none;
+}
+.dropdowns input[type="text"]:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 8px #ffcc00;
+}
+
+/* Dropdown selectors */
+select {
+  width: 130px;
+  padding: 8px;
+  font-size: 1rem;
+  background: #111;
+  color: #fff;
+  border: 2px solid #00ffd9;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+select:hover {
+  background: #1b1b1b;
+  transform: scale(1.05);
+}
+
+/* Dropdown option contrast colors */
+select option:nth-child(odd) {
+  background-color: #222;
+  color: #fff;
+}
+select option:nth-child(even) {
+  background-color: #333;
+  color: #00ffd9;
+}
+
+/* Swap Button */
+#swapBtn {
+  font-size: 1.6rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid #00ffd9;
+  background: #0f0f0f;
+  color: #00ffd9;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#swapBtn:hover {
+  background: #00ffd9;
+  color: #000;
+  transform: rotate(180deg);
+}
+
+/* Convert Button */
+#convertBtn {
+  margin-top: 15px;
+  background: linear-gradient(90deg, #ffcc00, #ff8800);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+#convertBtn:hover {
+  background: linear-gradient(90deg, #ff8800, #ffcc00);
+  transform: scale(1.1);
+}
+
+/* Result */
+#result {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #00ffd9;
+  text-shadow: 0 0 10px #00ffd9;
+}
