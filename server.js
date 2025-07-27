@@ -1,10 +1,11 @@
 const express = require("express");
 const fetch = require("node-fetch");
 const path = require("path");
-const app = express();
-const PORT = 3000;
 
-// Serve static files
+const app = express();
+const PORT = process.env.PORT || 3000; // Use Render's port when deployed
+
+// Serve static files from "public"
 app.use(express.static(path.join(__dirname, "public")));
 
 // API: fetch all rates
